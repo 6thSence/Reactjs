@@ -29,7 +29,8 @@ var Demo = React.createClass({
 			<h1>React.js Radio Group Demo</h1>
 			<form>
 				<p className="h3">How did you hear about us?</p>
-			<RadioOptionGroup options={RadioOptions}/>
+
+			<RadioOptionGroup other={true} options={RadioOptions}/>
 
 			
 				<p><input type="submit" value="Submit"/></p>
@@ -48,8 +49,7 @@ var RadioOptionGroup = React.createClass({
 						</RadioOption>	
 					);
 				})}	
-
-				<RadioOtherOption/>
+				{this.props.other && <RadioOtherOption/> }
 			</div>
 		);
 	}
