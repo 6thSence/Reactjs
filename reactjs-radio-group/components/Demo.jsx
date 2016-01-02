@@ -1,11 +1,11 @@
+
 var Demo = React.creatClass({
 	render: function() {
 		return (
-
 		<div className="container">
 			<h1>React.js Radio Group Demo</h1>
 			<form action="">
-			
+
 				<p className="h3">How did you hear about us?</p>
 				<p className="radio">
 					<label for="">

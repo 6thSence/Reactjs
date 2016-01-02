@@ -20,44 +20,53 @@
   
 
 
-var Hello = React.createClass({
+var Demo = React.createClass({
     render: function() {
         return <div className="container">
 			<h1>React.js Radio Group Demo</h1>
 			<form action="">
 
 				<p className="h3">How did you hear about us?</p>
-				<p className="radio">
+				<RadioOption value="nespapper">
+					Newspaper
+				</RadioOption>
+
+				<RadioOption value="Radio">
+					Radio
+				</RadioOption>
+				<RadioOption value="Television">
+					Television
+				</RadioOption>
+				<RadioOption value="Search Engine">
+					Search Engine
+				</RadioOption>
+				<RadioOption value="Social Media">
+					Social Media
+				</RadioOption>
+
+			<RadioOtherOption/>
+				<p><input type="submit" value="Submit"/></p>
+			</form>
+		</div>;
+    }
+});
+
+var RadioOption = React.createClass({
+	render: function () {
+		return (
+			<p className="radio">
 					<label>
-						<input type="radio" name="referrer" value="newspaper" />
-						Newspaper
+						<input type="radio" name="referrer" value={this.props.value}/>
+						{this.props.children}
 					</label>
 				</p>
-				<p className="radio">
-					<label>
-						<input type="radio" name="referrer" value="radio" />
-						Radio
-					</label>
-				</p>
-				<p className="radio">
-					<label>
-						<input type="radio" name="referrer" value="television" />
-						Television
-					</label>
-				</p>
-				<p className="radio">
-					<label>
-						<input type="radio" name="referrer" value="search engine" />
-						Search Engine
-					</label>
-				</p>
-				<p className="radio">
-					<label>
-						<input type="radio" name="referrer" value="social medis"/>
-						Social Media
-					</label>
-				</p>
-				<p className="radio">
+			);
+	}
+}); 
+var RadioOtherOption = React.createClass({
+	render: function () {
+		return (
+							<p className="radio">
 					<label>
 						<input type="radio" name="referrer" value="other"/>
 						Other
@@ -67,15 +76,12 @@ var Hello = React.createClass({
 						<input type="text" name="referrer_other"/>
 					</label>
 				</p>
-				<p><input type="submit" value="Submit"/></p>
+			);
+	}
+}); 
 
-			</form>
-		</div>;
-    }
-});
- 
 ReactDOM.render(
-	<Hello name="World" />,
+	<Demo />,
     document.getElementById('container')
 );
 
