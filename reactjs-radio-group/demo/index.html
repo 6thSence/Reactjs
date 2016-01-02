@@ -30,7 +30,7 @@ var Demo = React.createClass({
 			<form>
 				<p className="h3">How did you hear about us?</p>
 
-			<RadioOptionGroup other={true} options={RadioOptions}/>
+			<RadioOptionGroup options={RadioOptions}/>
 
 			
 				<p><input type="submit" value="Submit"/></p>
@@ -49,7 +49,7 @@ var RadioOptionGroup = React.createClass({
 						</RadioOption>	
 					);
 				})}	
-				{this.props.other && <RadioOtherOption/> }
+				<RadioOtherOption/>
 			</div>
 		);
 	}
@@ -67,17 +67,32 @@ var RadioOption = React.createClass({
 	}
 }); 
 var RadioOtherOption = React.createClass({
+	getInitialState: function () {
+		return {
+			checked: false
+		};
+	},
+	onChange: function (event) {
+		var input = event.target;
+
+		this.setState({
+			checked: input.checked
+		});
+	},
 	render: function () {
 		return (
 							<p className="radio">
 					<label>
-						<input type="radio" name="referrer" value="other"/>
+						<input type="radio" name="referrer" value="other" onChange={this.onChange}
+							/>
+						
 						Other
 					</label>
-					<label className="form-inline">
+						{this.state.checked && (
+							<label className="form-inline">
 						Please specify:
 						<input type="text" name="referrer_other"/>
-					</label>
+					</label>)}
 				</p>
 			);
 	}
