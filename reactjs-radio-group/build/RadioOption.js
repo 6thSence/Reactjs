@@ -7,12 +7,11 @@ var RadioOption = React.createClass({displayName: "RadioOption",
 	render: function () {
 		return (
 			React.createElement("p", {className: "radio"}, 
-					React.createElement("label", null, 
+				React.createElement("label", null, 
 						React.createElement("input", {type: "radio", name: this.props.name, value: this.props.value}), 
 						this.props.children
-					)
 				)
-			);
+			)
+		);
 	}
 }); 
-console.log('Radio Option');

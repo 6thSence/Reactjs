@@ -13,7 +13,7 @@ var RadioOptionGroup = React.createClass({displayName: "RadioOptionGroup",
 		var name = this.props.name;
 		return (
 			React.createElement("div", {onChange: this.onChange}, 
-				this.props.options.map(function(option){
+				this.props.options.map(function (option){
 					return (
 						React.createElement(RadioOption, {name: name, value: option.value, key: option.value}, 
 						option.label
@@ -26,5 +26,3 @@ var RadioOptionGroup = React.createClass({displayName: "RadioOptionGroup",
 
 	}
 });
-
-console.log('Radio Option Group');

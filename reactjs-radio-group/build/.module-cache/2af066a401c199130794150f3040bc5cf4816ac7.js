@@ -1,56 +1,31 @@
+var Demo = React.createClass({displayName: "Demo",
+	render: function () {
+		var radioOptions = [
+			{ value: 'newspaper', label: 'Newspaper' },
+			{ value: 'radio', label: 'Radio' },
+			{ value: 'tv', label: 'Television' },
+			{ value: 'search', label: 'Search Engine' },
+			{ value: 'social', label: 'Social Media' }
+		];
 
-var Demo = React.createClass({
-	render: function() {
 		return (
-		React.createElement("div", {className: "container"}, 
-			React.createElement("h1", null, "React.js Radio Group Demo"), 
-			React.createElement("form", {action: ""}, 
 
-				React.createElement("p", {className: "h3"}, "How did you hear about us?"), 
-				React.createElement("p", {className: "radio"}, 
-					React.createElement("label", {for: ""}, 
-						React.createElement("input", {type: "radio", name: "referrer", value: "newspaper"}), 
-						"Newspaper"
-					)
-				), 
-				React.createElement("p", {className: "radio"}, 
-					React.createElement("label", {for: ""}, 
-						React.createElement("input", {type: "radio", name: "referrer", value: "radio"}), 
-						"Radio"
-					)
-				), 
-				React.createElement("p", {className: "radio"}, 
-					React.createElement("label", {for: ""}, 
-						React.createElement("input", {type: "radio", name: "referrer", value: "television"}), 
-						"Television"
-					)
-				), 
-				React.createElement("p", {className: "radio"}, 
-					React.createElement("label", {for: ""}, 
-						React.createElement("input", {type: "radio", name: "referrer", value: "search engine"}), 
-						"Search Engine"
-					)
-				), 
-				React.createElement("p", {className: "radio"}, 
-					React.createElement("label", {for: ""}, 
-						React.createElement("input", {type: "radio", name: "referrer", value: "social medis"}), 
-						"Social Media"
-					)
-				), 
-				React.createElement("p", {className: "radio"}, 
-					React.createElement("label", {for: ""}, 
-						React.createElement("input", {type: "radio", name: "referrer", value: "other"}), 
-						"Other"
+			React.createElement("div", {className: "container"}, 
+				React.createElement("h1", null, "React.js Radio Group Demo"), 
+				
+				React.createElement("form", null, 
+					React.createElement("p", {className: "h3"}, "How did you hear about us?"), 
+
+					React.createElement(RadioOptionGroup, {
+						name: "referrer", 
+						other: true, 
+						options: radioOptions}
 					), 
-					React.createElement("label", {className: "form-inline"}, 
-						"Please specify:", 
-						React.createElement("input", {type: "text", name: "referrer_other"})
-					)
-				), 
-				React.createElement("p", null, React.createElement("input", {type: "submit", value: "Submit"}))
 
+					React.createElement("p", null, React.createElement("input", {type: "submit"}))
+				)
 			)
-		)
+
 		);
 	}
 });
