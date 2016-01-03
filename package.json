@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/6thSence/Reactjs/issues"
   },
-  "homepage": "https://github.com/6thSence/Reactjs#readme"
+  "homepage": "https://github.com/6thSence/Reactjs#readme",
+  "dependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-react": "^6.3.13"
+  }
 }

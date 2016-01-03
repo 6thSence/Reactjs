@@ -1,26 +1,29 @@
-var Demo = React.createClass({
-    render: function() {
-    	var RadioOptions = [
-    		{value: "newspaper",		label:"Newspaper"},
-    		{value: "radio",			label:"Radio"},
-    		{value: "tv", 				label:"Television"},
-    		{value: "search engine",	label:"Search Engine"},
-    		{value: "social media",		label:"Social Media"}
-    	];
-        return <div className="container">
+function Demo() {
+	var radioOptions = [
+		{ value: 'newspaper', label: 'Newspaper' },
+		{ value: 'radio', label: 'Radio' },
+		{ value: 'tv', label: 'Television' },
+		{ value: 'search', label: 'Search Engine' },
+		{ value: 'social', label: 'Social Media' }
+	];
+
+	return (
+
+		<div className="container">
 			<h1>React.js Radio Group Demo</h1>
+			
 			<form>
 				<p className="h3">How did you hear about us?</p>
 
-			<RadioOptionGroup
-				name="referrer"
-			 	other={true} 
-			 	options={RadioOptions}
-			/>
+				<RadioOptionGroup
+					name="referrer"
+					other={true}
+					options={radioOptions}
+				/>
 
-			
-				<p><input type="submit" value="Submit"/></p>
+				<p><input type="submit"/></p>
 			</form>
-		</div>;
-    }
-});
+		</div>
+
+	);
+}

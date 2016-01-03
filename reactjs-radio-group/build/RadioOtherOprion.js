@@ -1,6 +1,7 @@
+var RadioOtherOption = React.createClass({
+	displayName: "RadioOtherOption",
 
-var RadioOtherOption = React.createClass({displayName: "RadioOtherOption",
-	PropTypes: {
+	propTypes: {
 		name: React.PropTypes.string.isRequired
 	},
 	getInitialState: function () {
@@ -16,7 +17,7 @@ var RadioOtherOption = React.createClass({displayName: "RadioOtherOption",
 		});
 	},
 	componentDidUpdate: function (prevProps, prevState) {
-		var input = this.refs.input.getDOMNode();
+		var input = this.refs.input;
 
 		if (prevState.checked !== input.checked) {
 			this.setState({
@@ -25,22 +26,22 @@ var RadioOtherOption = React.createClass({displayName: "RadioOtherOption",
 		}
 	},
 	render: function () {
-		return (
-			React.createElement("p", {className: "form-group radio"}, 
-					React.createElement("label", null, 
-						React.createElement("input", {ref: "input", onChange: this.onChange, type: "radio", 
-							name: this.props.name, value: "other"}), 
-						"Other"
-					), 
-
-					this.state.checked && (
-						React.createElement("label", {className: "form-inline"}, 
-							"Please specify:", 
-							React.createElement("input", {type: "text", name: "referrer_other"})
-						)
-					)
-				)
-			);
+		return React.createElement(
+			"p",
+			{ className: "form-group radio" },
+			React.createElement(
+				"label",
+				null,
+				React.createElement("input", { ref: "input", onChange: this.onChange, type: "radio",
+					name: this.props.name, value: "other" }),
+				"Other"
+			),
+			this.state.checked && React.createElement(
+				"label",
+				{ className: "form-inline" },
+				"Please specify:",
+				React.createElement("input", { type: "text", name: "referrer_other" })
+			)
+		);
 	}
-}); 
-
+});
