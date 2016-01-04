@@ -18,6 +18,7 @@
   "homepage": "https://github.com/6thSence/Reactjs#readme",
   "dependencies": {
     "babel-cli": "^6.3.17",
-    "babel-preset-react": "^6.3.13"
+    "babel-preset-react": "^6.3.13",
+    "hoverboard": "^2.4.4"
   }
 }
