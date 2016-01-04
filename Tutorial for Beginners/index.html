@@ -17,12 +17,20 @@
 		var DariyasComponent = React.createClass({
 		render: function() {
 			return(
-					<h2>My name is Dariya</h2>			
+					<h2>{this.props.user} likes to eat {this.props.food}</h2>			
 				);	
 		}
 	});
 	
-	React.render(<DariyasComponent />, document.getElementById('content'));
+	React.render(
+		<div>
+			<DariyasComponent user="Dariya" food="Bacon" />
+			<DariyasComponent user="Sally" food="Tuna" />
+			<DariyasComponent user="Bucky" food="Beef" />
+			<DariyasComponent user="Tony" food="Ham" />
+		</div>,
+		document.getElementById('content')
+	);
 
 	</script>
 
