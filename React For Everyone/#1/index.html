@@ -33,8 +33,12 @@
 			},	
 
 			componentDidMount: function() {
+		
+			},
+
+			_addByOne: function() {
 				this.setState({
-					value: this.state.value + 19	
+					value: this.state.value + 1	
 				});
 			},
 
@@ -47,8 +51,9 @@
 
 					return (
 						<div>
-							<h1>Hello <Person name={greeting} />!</h1>
-							{this.state.value}
+							<h1 onClick={this._onClick}>Hello <Person name={greeting} />!</h1>
+							{this.state.value} <br /><br /><br />
+							<button onClick={this._addByOne}>Click Me</button>
 						</div>		
 						
 						)
