@@ -1,26 +1,27 @@
 import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-
-
-
+import Header from '../components/Header'
+// import MainSection from '../components/MainSection'
+// import * as TodoActions from '../actions/todos'
 
 class App extends Component {
   render() {
     const { todos, actions } = this.props
     return (
       <div>
-      <h2> hi, im from app.js </h2>	
-       
+
+        <Header />
+        
       </div>
     )
   }
 }
 
-App.propTypes = {
-  todos: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
-}
+// App.propTypes = {
+//   todos: PropTypes.array.isRequired,
+//   actions: PropTypes.object.isRequired
+// }
 
 function mapStateToProps(state) {
   return {
@@ -28,8 +29,13 @@ function mapStateToProps(state) {
   }
 }
 
-
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(TodoActions, dispatch)
+//   }
+// }
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  // mapDispatchToProps
 )(App)
