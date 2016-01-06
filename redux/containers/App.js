@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 // import MainSection from '../components/MainSection'
-// import * as TodoActions from '../actions/todos'
+import * as TodoActions from '../actions/todos'
 
 class App extends Component {
   render() {
@@ -11,17 +11,17 @@ class App extends Component {
     return (
       <div>
 
-        <Header />
+        <Header addTodo={actions.addTodo} />
         
       </div>
     )
   }
 }
 
-// App.propTypes = {
-//   todos: PropTypes.array.isRequired,
-//   actions: PropTypes.object.isRequired
-// }
+App.propTypes = {
+  todos: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
+}
 
 function mapStateToProps(state) {
   return {
@@ -29,13 +29,13 @@ function mapStateToProps(state) {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     actions: bindActionCreators(TodoActions, dispatch)
-//   }
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(TodoActions, dispatch)
+  }
+}
 
 export default connect(
   mapStateToProps,
-  // mapDispatchToProps
+  mapDispatchToProps
 )(App)
